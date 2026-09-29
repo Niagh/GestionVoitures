@@ -1,14 +1,19 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+    val maVoiture = Voiture("Toyota", "Corolla", 2020)
+    println("Avant modification: ${maVoiture.getMarque()} ${maVoiture.getModele()} ${maVoiture.getAnnee()}")
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
-    }
+    maVoiture.setMarque("Honda")
+    maVoiture.setModele("Civic")
+    maVoiture.setAnnee(2021)
+
+    println("Après modification: ${maVoiture.getMarque()} ${maVoiture.getModele()} ${maVoiture.getAnnee()}")
+
+    val maVoiture2 = Voiture("Honda", "Civic", 2021)
+    val maVoiture3 = Voiture("Ford", "Mustang", 1969)
+
+    println("Ma 2ème voiture : ${maVoiture2.getMarque()} ${maVoiture2.getModele()} ${maVoiture2.getAnnee()}")
+    println("Ma 3ème voiture : ${maVoiture3.getMarque()} ${maVoiture3.getModele()} ${maVoiture3.getAnnee()}")
+
+    println("Nombre total de voitures : ${Voiture.nombreDeVoitures}")
+
 }
